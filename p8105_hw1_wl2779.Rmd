@@ -1,29 +1,23 @@
----
-title: "Untitled"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#problem 1#
+```{r}
+x=rnorm(10)
+vec_logical=c(x>0)
+vec_char =c(length=10)
+vec_factor=c(length=10,level=3)
+mean(x)
+mean(vec_logical)
+mean(vec_char)
+mean(vec_factor)
 ```
 
-## R Markdown
+#Problem 2
+```{r}
+install.packages("palmerpenguins")
+data("penguins", package = "palmerpenguins")
+#variable name: Species, island, bill_length, bill_depth, Flipper_length, body_mass, sex and year;nrow=344,ncol=8 mean flipper length=197mm#
+ggplot(penguins, aes(x =bill_length_mm, y = flipper_length_mm)) + 
+  geom_point(aes(color = species))
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
